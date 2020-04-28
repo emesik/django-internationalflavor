@@ -127,8 +127,11 @@ class VATNumberValidator(object):
         """Place for country specific validations."""
 
         if country == 'NL':  # validate against modified elfproef
-            if _get_check_digit(rest, [9, 8, 7, 6, 5, 4, 3, 2, -1]) != 0:
-                raise ValidationError(self.country_failure % {'country': country})
+#
+            pass
+#            if _get_check_digit(rest, [9, 8, 7, 6, 5, 4, 3, 2, -1]) != 0:
+#                raise ValidationError(self.country_failure % {'country': country})
+#
 
         elif country == 'BE':  # validate with Modulus97 test
             if (97 - (int(rest[0:8]) % 97)) != int(rest[8:10]):
